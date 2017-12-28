@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/from';
+import 'rxjs/add/observable/zip';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   onClick() {
-    const a = [1, 3, 5];
-    const b = [2, 4, 6];
+    const a$: Observable<number> = Observable.from([1, 3, 5]);
+    const b$: Observable<number> = Observable.from([2, 4, 6]);
 
-    for (let i = 0; i < a.length; i++) {
-      console.log(a[i] + b[i]);
-    }
+    const sum$: Observable<number> = Observable.zip(a$, b$, (a, b) => a + b);
+
+    sum$.subscribe(sum => console.log(sum));
   }
 }
