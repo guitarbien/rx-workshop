@@ -9,12 +9,23 @@ import 'rxjs/add/observable/zip';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  onClick() {
-    const a$: Observable<number> = Observable.from([1, 3, 5]);
-    const b$: Observable<number> = Observable.from([2, 4, 6]);
+  // onClick() {
+  //   const a$: Observable<number> = Observable.from([1, 3, 5]);
+  //   const b$: Observable<number> = Observable.from([2, 4, 6]);
+  //
+  //   const sum$: Observable<number> = Observable.zip(a$, b$, (a, b) => a + b);
+  //
+  //   sum$.subscribe(sum => console.log(sum));
+  // }
+  title: string;
+  posts$: observable<Post[]> = this.postService.getPosts();
 
-    const sum$: Observable<number> = Observable.zip(a$, b$, (a, b) => a + b);
+  constructor(private postService: IPostService) {
+  }
 
-    sum$.subscribe(sum => console.log(sum));
+  onAddPostClick() {
+  }
+
+  onReloadClick() {
   }
 }
