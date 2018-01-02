@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/zip';
+import {Post} from './model/post.model';
+import {IPostService} from './interface/ipost-service.interface';
 
 @Component({
   selector: 'app-root',
@@ -18,14 +20,25 @@ export class AppComponent {
   //   sum$.subscribe(sum => console.log(sum));
   // }
   title: string;
-  posts$: observable<Post[]> = this.postService.getPosts();
+  posts$: Observable<Post[]> = this.postService.getPosts();
 
   constructor(private postService: IPostService) {
   }
 
   onAddPostClick() {
+    const post: Post = {
+      title: this.title,
+      author: '隨便'
+    };
+
+    this.postService.addPost(post);
+
+    this.title = '';
+
+    this.onReloadClick();
   }
 
   onReloadClick() {
+    this.posts$ = this.postService.getPosts();
   }
 }
