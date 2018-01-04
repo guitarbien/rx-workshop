@@ -6,10 +6,12 @@ import {IPostService} from './interface/ipost-service.interface';
 import {PostService} from './service/post/post.service';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AddPostComponent } from './component/add-post/add-post.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
