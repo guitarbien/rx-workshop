@@ -1,0 +1,6 @@
+import { Post } from '../model/post.model';
+import { Observable } from 'rxjs/Observable';
+
+export abstract class IShowCount {
+  readonly posts$: Observable<Post[]>;
+}

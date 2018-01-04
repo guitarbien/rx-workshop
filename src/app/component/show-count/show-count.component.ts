@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Post } from '../../model/post.model';
-import { IPostService } from '../../interface/ipost-service.interface';
 import { Observable } from 'rxjs/Observable';
+import { IShowCount } from '../../interface/ishow-count.interface';
 
 @Component({
   selector: 'app-show-count',
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./show-count.component.css']
 })
 export class ShowCountComponent {
-  posts$: Observable<Post[]> = this.postService.getPosts();
+  posts$: Observable<Post[]> = this.postService.posts$;
 
-  constructor(private postService: IPostService) { }
+  constructor(private postService: IShowCount) { }
 }
