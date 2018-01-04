@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../../model/post.model';
+import { IPostService } from '../../interface/ipost-service.interface';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-add-post',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPostComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+  posts$: Observable<Post[]> = this.postService.getPosts();
+
+  constructor(private postService: IPostService) { }
 
   ngOnInit() {
   }
 
+  onAddPostClick() {
+    const post: Post = {
+      title: this.title,
+      author: '隨便'
+    };
+
+    this.postService.addPost(post);
+
+    this.title = '';
+  }
 }
