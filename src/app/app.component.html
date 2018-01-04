@@ -1,13 +1,5 @@
-<input type="text" [(ngModel)]="title">
-<button (click)="onAddPostClick()">Add Post</button>
-<ul>
-  <!-- |async 相當於在 component 直接做 subscribe()，也最自動做 unsubscribe() -->
-  <li *ngFor="let post of posts$|async">
-    {{ post.title }} {{ post.author }}
-  </li>
-</ul>
-
-<!-- ?. 當前面的變數 posts$ 有資料時才會開始觸發 length -->
-{{ (posts$|async)?.length }}
+<app-add-post></app-add-post>
+<app-list-post></app-list-post>
+<app-show-count></app-show-count>
 <p></p>
-<button (click)="onReloadClick()">Reload</button>
+<app-reload-posts></app-reload-posts>

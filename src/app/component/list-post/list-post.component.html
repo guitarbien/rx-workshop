@@ -1,3 +1,6 @@
-<p>
-  list-post works!
-</p>
+<ul>
+  <!-- |async 相當於在 component 直接做 subscribe()，也最自動做 unsubscribe() -->
+  <li *ngFor="let post of posts$|async">
+    {{ post.title }} {{ post.author }}
+  </li>
+</ul>

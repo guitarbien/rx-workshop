@@ -1,3 +1,2 @@
-<p>
-  show-count works!
-</p>
+<!-- ?. 當前面的變數 posts$ 有資料時才會開始觸發 length -->
+{{ (posts$|async)?.length }}
