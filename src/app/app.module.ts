@@ -8,12 +8,14 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddPostComponent } from './component/add-post/add-post.component';
 import { ListPostComponent } from './component/list-post/list-post.component';
+import { ReloadPostsComponent } from './component/reload-posts/reload-posts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddPostComponent,
-    ListPostComponent
+    ListPostComponent,
+    ReloadPostsComponent
   ],
   imports: [
     BrowserModule,
