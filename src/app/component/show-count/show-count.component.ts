@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Post } from '../../model/post.model';
+import { IPostService } from '../../interface/ipost-service.interface';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-show-count',
   templateUrl: './show-count.component.html',
   styleUrls: ['./show-count.component.css']
 })
-export class ShowCountComponent implements OnInit {
+export class ShowCountComponent {
+  posts$: Observable<Post[]> = this.postService.getPosts();
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor(private postService: IPostService) { }
 }

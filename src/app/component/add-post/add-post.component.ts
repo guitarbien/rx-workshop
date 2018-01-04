@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Post } from '../../model/post.model';
 import { IPostService } from '../../interface/ipost-service.interface';
 import { Observable } from 'rxjs/Observable';
@@ -8,15 +8,12 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './add-post.component.html',
   styleUrls: ['./add-post.component.css']
 })
-export class AddPostComponent implements OnInit {
+export class AddPostComponent {
 
   title: string;
   posts$: Observable<Post[]> = this.postService.getPosts();
 
   constructor(private postService: IPostService) { }
-
-  ngOnInit() {
-  }
 
   onAddPostClick() {
     const post: Post = {
@@ -27,5 +24,7 @@ export class AddPostComponent implements OnInit {
     this.postService.addPost(post);
 
     this.title = '';
+
+    this.posts$ = this.postService.getPosts();
   }
 }

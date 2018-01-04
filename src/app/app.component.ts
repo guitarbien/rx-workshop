@@ -20,7 +20,4 @@ export class AppComponent {
   constructor() {
   }
 
-  onReloadClick() {
-    this.posts$ = this.postService.getPosts();
-  }
 }
