@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddPostComponent } from './component/add-post/add-post.component';
 import { ListPostComponent } from './component/list-post/list-post.component';
 import { ReloadPostsComponent } from './component/reload-posts/reload-posts.component';
+import { ShowCountComponent } from './component/show-count/show-count.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddPostComponent,
     ListPostComponent,
-    ReloadPostsComponent
+    ReloadPostsComponent,
+    ShowCountComponent
   ],
   imports: [
     BrowserModule,
