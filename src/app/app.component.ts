@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { CounterInterface } from './interface/change-counter.interface';
+
 
 @Component({
   selector: 'app-root',
@@ -7,9 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   initialCount = 2;
-  counter: number = this.initialCount;
+  counter$: Observable<number> = this.counterService.counter$;
 
-  onCounterChange(counter: number) {
-    this.counter = counter;
+  constructor(private counterService: CounterInterface) {
   }
 }

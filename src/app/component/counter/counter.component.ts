@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { CounterInterface } from '../../interface/change-counter.interface';
 
 @Component({
   selector: 'app-counter',
@@ -7,21 +9,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
   @Input() initialCount;
-  @Output() counterChange: EventEmitter<number> = new EventEmitter<number>();
+  counter$: Observable<number> = this.counterService.counter$;
 
-  private counter: number;
+  constructor(private counterService: CounterInterface) {
+  }
 
   ngOnInit() {
-    this.counter = this.initialCount;
+    this.counterService.setInitialCount(this.initialCount);
   }
 
   onIncrementClick() {
-    this.counter++;
-    this.counterChange.emit(this.counter);
+    this.counterService.addOne();
   }
 
   onDecrementClick() {
-    this.counter--;
-    this.counterChange.emit(this.counter);
+    this.counterService.minusOne();
   }
 }

@@ -13,6 +13,8 @@ import { IListPosts } from './interface/ilist-posts.interface';
 import { IShowCount } from './interface/ishow-count.interface';
 import { IReloadPosts } from './interface/ireload-posts.interface';
 import { CounterComponent } from './component/counter/counter.component';
+import { CounterService } from './service/counter.service';
+import { CounterInterface } from './interface/change-counter.interface';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,12 @@ import { CounterComponent } from './component/counter/counter.component';
   ],
   providers: [
     PostService,
+    CounterService,
     {provide: IAddPost, useExisting: PostService},
     {provide: IListPosts, useExisting: PostService},
     {provide: IShowCount, useExisting: PostService},
-    {provide: IReloadPosts, useExisting: PostService}
+    {provide: IReloadPosts, useExisting: PostService},
+    {provide: CounterInterface, useExisting: CounterService}
   ],
   bootstrap: [AppComponent]
 })
