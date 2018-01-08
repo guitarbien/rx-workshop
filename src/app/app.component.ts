@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  initialCount = 2;
+  counter: number = this.initialCount;
 
   constructor() {
   }
