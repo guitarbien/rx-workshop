@@ -4,6 +4,6 @@
 <p></p>
 <app-reload-posts></app-reload-posts>
 <p></p>
-<app-counter [initialCount]="initialCount"></app-counter>
+<app-counter [initialCount]="initialCount" (counterChange)="onCounterChange($event)"></app-counter>
 <p></p>
 {{ counter }}

@@ -12,6 +12,7 @@ import { IAddPost } from './interface/iadd-post.interface';
 import { IListPosts } from './interface/ilist-posts.interface';
 import { IShowCount } from './interface/ishow-count.interface';
 import { IReloadPosts } from './interface/ireload-posts.interface';
+import { CounterComponent } from './component/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { IReloadPosts } from './interface/ireload-posts.interface';
     AddPostComponent,
     ListPostComponent,
     ReloadPostsComponent,
-    ShowCountComponent
+    ShowCountComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
