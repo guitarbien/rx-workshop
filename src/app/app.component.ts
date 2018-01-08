@@ -9,7 +9,7 @@ export class AppComponent {
   initialCount = 2;
   counter: number = this.initialCount;
 
-  constructor() {
+  onCounterChange(counter: number) {
+    this.counter = counter;
   }
-
 }
