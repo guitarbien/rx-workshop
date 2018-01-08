@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// import 'rxjs/add/observable/from';
-// import 'rxjs/add/observable/zip';
 
 @Component({
   selector: 'app-root',
