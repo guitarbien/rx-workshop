@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CounterComponent } from './component/counter/counter.component';
 import { IndexPostComponent } from './component/index-post/index-post.component';
+import { IndexCounterComponent } from './component/index-counter/index-counter.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'post', pathMatch: 'full'},
-  {path: 'counter', component: CounterComponent},
+  {path: '', redirectTo: 'counter', pathMatch: 'full'},
+  {path: 'counter', component: IndexCounterComponent},
   {path: 'post/:id', component: IndexPostComponent},
   {path: 'post', component: IndexPostComponent}
 ];
