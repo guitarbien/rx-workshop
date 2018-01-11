@@ -1,2 +1,7 @@
 <button (click)="onIncrementClick()">+</button>
 <button (click)="onDecrementClick()">-</button>
+
+<app-counter [initialCount]="initialCount"></app-counter>
+<app-counter [initialCount]="initialCount"></app-counter>
+<p></p>
+{{ counter$|async }}
