@@ -16,6 +16,7 @@ import { CounterComponent } from './component/counter/counter.component';
 import { CounterService } from './service/counter.service';
 import { CounterInterface } from './interface/change-counter.interface';
 import { AppRoutingModule } from './app-routing.module';
+import { IndexPostComponent } from './component/index-post/index-post.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
     ListPostComponent,
     ReloadPostsComponent,
     ShowCountComponent,
-    CounterComponent
+    CounterComponent,
+    IndexPostComponent
   ],
   imports: [
     BrowserModule,
