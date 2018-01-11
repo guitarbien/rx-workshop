@@ -15,6 +15,7 @@ import { IReloadPosts } from './interface/ireload-posts.interface';
 import { CounterComponent } from './component/counter/counter.component';
 import { CounterService } from './service/counter.service';
 import { CounterInterface } from './interface/change-counter.interface';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CounterInterface } from './interface/change-counter.interface';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     PostService,
